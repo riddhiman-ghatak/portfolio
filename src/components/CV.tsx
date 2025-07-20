@@ -1,4 +1,7 @@
+
 import React from 'react';
+import { useRef } from 'react';
+
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Download, Eye, Mail, Phone, MapPin, Calendar } from 'lucide-react';
@@ -8,6 +11,15 @@ const CV: React.FC = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  // 👇 This is the new ref for the preview section
+  const previewRef = useRef<HTMLDivElement>(null);
+
+  // 👇 This function scrolls to the preview when the button is clicked
+  const handlePreviewClick = () => {
+    previewRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
 
   const experience = [
     {
@@ -82,25 +94,30 @@ const CV: React.FC = () => {
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
             A comprehensive overview of my professional experience, education, and skills.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <motion.button
+            <motion.a
+              href="/Resume_Riddhiman_Ghatak_ML.pdf"
+              download
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center space-x-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <Download size={20} />
               <span>Download CV</span>
-            </motion.button>
-            
+            </motion.a>
+
+
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
+              onClick={handlePreviewClick}
               className="inline-flex items-center space-x-2 px-6 py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-900 dark:text-white rounded-full font-medium transition-all duration-300"
             >
               <Eye size={20} />
               <span>Preview CV</span>
             </motion.button>
+
           </div>
         </motion.div>
 
@@ -111,7 +128,7 @@ const CV: React.FC = () => {
               <div className="w-1 h-8 bg-blue-600 rounded mr-4"></div>
               Professional Experience
             </h3>
-            
+
             <div className="space-y-8">
               {experience.map((job, index) => (
                 <motion.div
@@ -149,7 +166,7 @@ const CV: React.FC = () => {
                 <div className="w-1 h-8 bg-emerald-600 rounded mr-4"></div>
                 Education
               </h3>
-              
+
               <div className="space-y-6">
                 {education.map((edu, index) => (
                   <motion.div
@@ -182,7 +199,7 @@ const CV: React.FC = () => {
                 <div className="w-1 h-8 bg-purple-600 rounded mr-4"></div>
                 Contact Information
               </h3>
-              
+
               <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="text-purple-600 dark:text-purple-400" size={20} />
@@ -203,21 +220,24 @@ const CV: React.FC = () => {
 
         {/* CV Preview Mock */}
         <motion.div
+          ref={previewRef}
           variants={itemVariants}
-          className="mt-16 bg-gray-100 dark:bg-gray-800 rounded-2xl p-8 text-center"
+          className="mt-16 bg-gray-200 dark:bg-gray-800 rounded-2xl px-4 sm:px-8 md:px-16 py-12"
         >
-          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
+          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 w-full mx-auto">
             <div className="text-gray-500 dark:text-gray-400 mb-4">
-              <div className="w-full h-64 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <Eye size={48} className="mx-auto mb-4" />
-                  <p className="text-lg font-medium">CV Preview</p>
-                  <p className="text-sm">Click "Preview CV" to view the full document</p>
-                </div>
+              <div className="w-full h-[85vh] bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
+                <iframe
+                  src="/Resume_Riddhiman_Ghatak_ML.pdf"
+                  title="CV Preview"
+                  className="w-full h-full rounded-lg border-none"
+                />
               </div>
             </div>
           </div>
         </motion.div>
+
+
       </motion.div>
     </section>
   );

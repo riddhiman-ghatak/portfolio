@@ -82,7 +82,7 @@ const About: React.FC = () => {
                   />
                 </div>
               </motion.div>
-              
+
               <div className="text-center sm:text-left">
                 <motion.h1
                   variants={itemVariants}
@@ -100,8 +100,8 @@ const About: React.FC = () => {
                   variants={itemVariants}
                   className="text-gray-600 dark:text-gray-300 leading-relaxed"
                 >
-                  Passionate about building intelligent systems and beautiful user experiences. 
-                  I combine machine learning expertise with modern web development to create 
+                  Passionate about building intelligent systems and beautiful user experiences.
+                  I combine machine learning expertise with modern web development to create
                   impactful solutions that bridge the gap between data science and user-facing applications.
                 </motion.p>
               </div>
@@ -112,29 +112,24 @@ const About: React.FC = () => {
               <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">About Me</h3>
               <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
                 <p>
-                  I'm a passionate technologist with over 5 years of experience bridging the gap between 
-                  data science and software engineering. My journey began with a deep fascination for 
-                  artificial intelligence and machine learning, which led me to pursue advanced studies 
+                  I'm a passionate technologist with over 5 years of experience bridging the gap between
+                  data science and software engineering. My journey began with a deep fascination for
+                  artificial intelligence and machine learning, which led me to pursue advanced studies
                   at IIT Guwahati.
                 </p>
                 <p>
-                  Currently working as a Senior Data Scientist at TechCorp, I specialize in building 
-                  end-to-end machine learning pipelines that solve real-world business problems. My 
-                  expertise spans from developing sophisticated ML models to creating intuitive web 
+                  Currently working as a Senior Data Scientist at TechCorp, I specialize in building
+                  end-to-end machine learning pipelines that solve real-world business problems. My
+                  expertise spans from developing sophisticated ML models to creating intuitive web
                   applications that make complex data accessible to everyone.
                 </p>
                 <p>
-                  When I'm not coding or training models, you'll find me contributing to open-source 
-                  projects, writing technical articles, or exploring the latest advancements in AI. 
-                  I believe in the power of technology to create positive change and am always excited 
+                  When I'm not coding or training models, you'll find me contributing to open-source
+                  projects, writing technical articles, or exploring the latest advancements in AI.
+                  I believe in the power of technology to create positive change and am always excited
                   to collaborate on innovative projects that push the boundaries of what's possible.
                 </p>
-                <p>
-                  My approach combines technical rigor with creative problem-solving, ensuring that 
-                  every solution is not only technically sound but also user-friendly and scalable. 
-                  I'm particularly interested in the intersection of AI ethics, sustainable technology, 
-                  and human-centered design.
-                </p>
+
               </div>
             </motion.div>
 

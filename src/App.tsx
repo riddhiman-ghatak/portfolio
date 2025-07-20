@@ -8,26 +8,24 @@ import Blog from './components/Blog';
 import CV from './components/CV';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('darkMode');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      return saved ? JSON.parse(saved) : prefersDark;
-    }
-    return false;
-  });
+  const [darkMode, setDarkMode] = useState(false);
 
+  // Initialize dark mode from localStorage or system preference
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('darkMode', JSON.stringify(darkMode));
-    }
-    
+    const savedTheme = localStorage.getItem('darkMode');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialDarkMode = savedTheme ? JSON.parse(savedTheme) : prefersDark;
+    setDarkMode(initialDarkMode);
+  }, []);
+
+  // Apply dark mode to document
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+
     if (darkMode) {
       document.documentElement.classList.add('dark');
-      document.body.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
-      document.body.classList.remove('dark');
     }
   }, [darkMode]);
 
@@ -36,7 +34,7 @@ function App() {
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark' : ''}`}>
+    <div className="min-h-screen transition-colors duration-300">
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <main>
         <About />
