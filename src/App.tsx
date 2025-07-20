@@ -8,13 +8,12 @@ import Blog from './components/Blog';
 import CV from './components/CV';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   // Initialize dark mode from localStorage or system preference
   useEffect(() => {
     const savedTheme = localStorage.getItem('darkMode');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialDarkMode = savedTheme ? JSON.parse(savedTheme) : prefersDark;
+    const initialDarkMode = savedTheme ? JSON.parse(savedTheme) : true; // Default to dark mode
     setDarkMode(initialDarkMode);
   }, []);
 

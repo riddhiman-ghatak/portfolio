@@ -20,11 +20,14 @@ const About: React.FC = () => {
   ];
 
   const newsUpdates = [
-    'Joined TechCorp as Senior Data Scientist',
-    'Graduated from IIT Guwahati with M.Tech in AI',
-    'Published research paper on Neural Networks',
-    'Completed AWS Machine Learning Certification',
-    'Speaking at Tech Conference 2024'
+    {
+      date: 'Aug 13, 2025',
+      content: 'Graduated from IIT Guwahati with M.Tech in AI'
+    },
+    {
+      date: 'Jul 20, 2025',
+      content: 'Joined TechCorp as Senior Data Scientist'
+    }
   ];
 
   const socialLinks = [
@@ -74,9 +77,9 @@ const About: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 className="relative"
               >
-                <div className="w-32 h-32 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
+                <div className="w-40 h-40 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
                   <img
-                    src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
+                    src="/port_image.png"
                     alt="Profile"
                     className="w-full h-full rounded-full object-cover"
                   />
@@ -88,7 +91,7 @@ const About: React.FC = () => {
                   variants={itemVariants}
                   className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4"
                 >
-                  Alex Johnson
+                  Riddhiman Ghatak
                 </motion.h1>
                 <motion.p
                   variants={itemVariants}
@@ -98,16 +101,21 @@ const About: React.FC = () => {
                 </motion.p>
                 <motion.p
                   variants={itemVariants}
-                  className="text-gray-600 dark:text-gray-300 leading-relaxed"
+                  className="text-gray-600 dark:text-gray-300 leading-relaxed space-y-4"
                 >
-                  Passionate about building intelligent systems and beautiful user experiences.
-                  I combine machine learning expertise with modern web development to create
-                  impactful solutions that bridge the gap between data science and user-facing applications.
+                  <span>
+                    Passionate about building intelligent systems and elegant user experiences, I specialize in combining machine learning expertise with modern full-stack web development. With a solid foundation in data structures, algorithms, and deep learning, I enjoy creating solutions that are not only technically sound but also user-centric and impactful.
+                  </span>
+                  <br />
+                  <span>
+                    Currently focused on the intersection of AI and scalable applications, I’ve worked on everything from predictive modeling and real-time data pipelines to intuitive dashboards powered by LLMs. I believe in continuous learning, clean code, and using technology to solve meaningful problems.
+                  </span>
                 </motion.p>
+
               </div>
             </div>
 
-            {/* Enhanced About Me Description */}
+            {/* Enhanced About Me Description
             <motion.div variants={itemVariants} className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
               <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">About Me</h3>
               <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -131,7 +139,7 @@ const About: React.FC = () => {
                 </p>
 
               </div>
-            </motion.div>
+            </motion.div> */}
 
             {/* Social Links */}
             <motion.div variants={itemVariants}>
@@ -163,7 +171,7 @@ const About: React.FC = () => {
               <div className="space-y-4">
                 {newsUpdates.map((update, index) => (
                   <motion.div
-                    key={update}
+                    key={update.content}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
@@ -171,7 +179,10 @@ const About: React.FC = () => {
                     className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors cursor-pointer"
                   >
                     <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-gray-700 dark:text-gray-300">{update}</p>
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <span className="font-bold">{update.date}</span>
+                      <span className="ml-8">{update.content}</span>
+                    </p>
                   </motion.div>
                 ))}
               </div>
