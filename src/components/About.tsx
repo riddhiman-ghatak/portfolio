@@ -104,12 +104,16 @@ const About: React.FC = () => {
                   className="text-gray-600 dark:text-gray-300 leading-relaxed space-y-4"
                 >
                   <span>
-                    Passionate about building intelligent systems and elegant user experiences, I specialize in combining machine learning expertise with modern full-stack web development. With a solid foundation in data structures, algorithms, and deep learning, I enjoy creating solutions that are not only technically sound but also user-centric and impactful.
+                    Hi, I’m Riddhiman — a quiet guy who finds comfort in code.<br />
+                    I recently graduated from IIT Guwahati and now work as a Data Scientist at Commonwealth Bank. I don’t talk much, don’t post often — I just love building stuff that works. From training ML models to deploying full-stack, ML-powered applications, I enjoy the entire lifecycle.<br />
+                    Pipelines break, models drift, APIs crash — and I quietly fix them.<br />
+                    That’s my idea of fun.
                   </span>
-                  <br />
+
+                  {/* <br />
                   <span>
-                    Currently focused on the intersection of AI and scalable applications, I’ve worked on everything from predictive modeling and real-time data pipelines to intuitive dashboards powered by LLMs. I believe in continuous learning, clean code, and using technology to solve meaningful problems.
-                  </span>
+                    Currently focused on the intersection of AI and scalable applications, I’ve worked on everything from predictive modeling and real-time data pipelines to intuitive dashboards powered by LLMs. My experience spans a wide range of projects, each pushing the boundaries of what technology can achieve. I believe in continuous learning, clean code, and using technology to solve meaningful problems.
+                  </span> */}
                 </motion.p>
 
               </div>
