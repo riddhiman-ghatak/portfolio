@@ -1,10 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 import { Calendar, Clock, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const BlogPage: React.FC = () => {
+    // Ensure page starts at top
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const [ref, inView] = useInView({
         triggerOnce: true,
         threshold: 0.1,
@@ -115,13 +121,13 @@ const BlogPage: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen pt-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+        <div className="min-h-screen pt-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-300 flex flex-col">
             <motion.div
                 ref={ref}
                 variants={containerVariants}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
-                className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
+                className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex-1"
             >
                 {/* Header */}
                 <motion.div variants={itemVariants} className="mb-12">
@@ -142,13 +148,14 @@ const BlogPage: React.FC = () => {
                 </motion.div>
 
                 {/* Blog Posts List */}
-                <div className="space-y-8">
+                <div className="space-y-8 flex flex-col">
                     {blogPosts.map((post, index) => (
                         <motion.article
                             key={post.title}
                             variants={itemVariants}
                             whileHover={{ scale: 1.02 }}
-                            className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden cursor-pointer"
+                            className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden cursor-pointer order-none"
+                            style={{ order: index }}
                         >
                             <div className="md:flex">
                                 <div className="md:w-1/3">

@@ -1,10 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 import { Github, ExternalLink, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ProjectsPage: React.FC = () => {
+    // Ensure page starts at top
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const [ref, inView] = useInView({
         triggerOnce: true,
         threshold: 0.1,
@@ -96,13 +102,13 @@ const ProjectsPage: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen pt-16 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div className="min-h-screen pt-16 bg-white dark:bg-gray-900 transition-colors duration-300 flex flex-col">
             <motion.div
                 ref={ref}
                 variants={containerVariants}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
-                className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
+                className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex-1"
             >
                 {/* Header */}
                 <motion.div variants={itemVariants} className="mb-12">
@@ -123,13 +129,14 @@ const ProjectsPage: React.FC = () => {
                 </motion.div>
 
                 {/* Projects List */}
-                <div className="space-y-8">
+                <div className="space-y-8 flex flex-col">
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.title}
                             variants={itemVariants}
                             whileHover={{ scale: 1.02 }}
-                            className="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                            className="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden order-none"
+                            style={{ order: index }}
                         >
                             <div className="md:flex">
                                 <div className="md:w-1/3">
