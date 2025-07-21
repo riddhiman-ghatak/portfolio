@@ -79,7 +79,7 @@ const About: React.FC = () => {
               >
                 <div className="w-40 h-40 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
                   <img
-                    src="/port_image.png"
+                    src="/profile_image.webp"
                     alt="Profile"
                     className="w-full h-full rounded-full object-cover"
                   />

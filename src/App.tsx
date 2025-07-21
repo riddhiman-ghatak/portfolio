@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import About from './components/About';
-import TechnologyStack from './components/TechnologyStack';
-import Projects from './components/Projects';
-import WorkExperience from './components/WorkExperience';
-import Blog from './components/Blog';
-import CV from './components/CV';
+import HomePage from './pages/HomePage';
+import ProjectsPage from './pages/ProjectsPage';
+import BlogPage from './pages/BlogPage';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
 
-  // Initialize dark mode from localStorage or system preference
+  // Initialize dark mode from localStorage or default to true
   useEffect(() => {
     const savedTheme = localStorage.getItem('darkMode');
-    const initialDarkMode = savedTheme ? JSON.parse(savedTheme) : true; // Default to dark mode
+    const initialDarkMode = savedTheme ? JSON.parse(savedTheme) : true;
     setDarkMode(initialDarkMode);
   }, []);
 
@@ -33,17 +31,16 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen transition-colors duration-300">
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <main>
-        <About />
-        <TechnologyStack />
-        <Projects />
-        <WorkExperience />
-        <Blog />
-        <CV />
-      </main>
-    </div>
+    <Router>
+      <div className="min-h-screen transition-colors duration-300">
+        <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 
 interface NavbarProps {
@@ -10,6 +11,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('about');
+  const location = useLocation();
 
   const navItems = [
     { id: 'about', label: 'About' },
@@ -21,6 +23,9 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   ];
 
   useEffect(() => {
+    // Only handle scroll-based active section on home page
+    if (location.pathname !== '/') return;
+
     const handleScroll = () => {
       const sections = navItems.map(item => document.getElementById(item.id));
       const scrollPosition = window.scrollY + 100;
@@ -36,9 +41,15 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const scrollToSection = (sectionId: string) => {
+    // If not on home page, navigate to home first
+    if (location.pathname !== '/') {
+      window.location.href = `/#${sectionId}`;
+      return;
+    }
+
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -57,9 +68,8 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="font-bold text-xl text-gray-900 dark:text-white cursor-pointer"
-            onClick={() => scrollToSection('about')}
           >
-            Portfolio
+            <Link to="/">Portfolio</Link>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -70,11 +80,10 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection(item.id)}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  activeSection === item.id
-                    ? 'text-blue-600 dark:text-blue-400'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                }`}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${activeSection === item.id && location.pathname === '/'
+                  ? 'text-blue-600 dark:text-blue-400'
+                  : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                  }`}
               >
                 {item.label}
               </motion.button>
@@ -118,11 +127,10 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
                   key={item.id}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
-                    activeSection === item.id
-                      ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                  }`}
+                  className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${activeSection === item.id && location.pathname === '/'
+                    ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                    }`}
                 >
                   {item.label}
                 </motion.button>

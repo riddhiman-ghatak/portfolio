@@ -1,27 +1,43 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { 
-  FaReact, 
-  FaNodeJs, 
-  FaPython, 
-  FaDocker, 
-  FaGitAlt, 
-  FaGithub, 
-  FaHtml5, 
-  FaCss3Alt, 
-  FaJs, 
-  FaAws 
+import {
+  FaNodeJs,
+  FaPython,
+  FaDocker,
+  FaGitAlt,
+  FaGithub,
+  FaAws,
+  FaDatabase,
+  FaCube,
+  FaBrain,
+  FaGitlab
 } from 'react-icons/fa';
-import { 
-  SiTypescript, 
-  SiNextdotjs, 
-  SiTailwindcss, 
-  SiBootstrap, 
-  SiPostgresql, 
-  SiMongodb, 
-  SiTensorflow, 
-  SiPytorch 
+import {
+  SiTypescript,
+  SiMongodb,
+  SiSupabase,
+  SiCplusplus,
+  SiGooglecloud,
+  SiKubernetes,
+  SiApacheairflow,
+  SiApachespark,
+  SiPostman,
+  SiSnowflake,
+  SiFlask,
+  SiMlflow,
+  SiDjango,
+  SiTensorflow,
+  SiPytorch,
+  SiHuggingface,
+  SiDvc,
+  SiOllama,
+  SiNeo4J,
+  SiFastapi,
+  SiPostgresql,
+  SiLangchain,
+  SiScikitlearn,
+  SiApachekafka
 } from 'react-icons/si';
 
 const TechnologyStack: React.FC = () => {
@@ -31,32 +47,51 @@ const TechnologyStack: React.FC = () => {
   });
 
   const technologies = [
-    // Row 1
+    // Row 1 - AI/ML & Vector Databases
     [
-      { name: 'React', icon: FaReact, color: 'text-blue-500' },
-      { name: 'NextJS', icon: SiNextdotjs, color: 'text-black dark:text-white' },
-      { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-cyan-500' },
-      { name: 'Bootstrap', icon: SiBootstrap, color: 'text-purple-600' },
-      { name: 'HTML', icon: FaHtml5, color: 'text-orange-600' },
-      { name: 'CSS', icon: FaCss3Alt, color: 'text-blue-600' },
-      { name: 'JavaScript', icon: FaJs, color: 'text-yellow-500' },
-      { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-700' },
-      { name: 'Node.js', icon: FaNodeJs, color: 'text-green-600' },
+      { name: 'PyTorch', icon: SiPytorch, color: 'text-red-500' },
+      { name: 'TensorFlow', icon: SiTensorflow, color: 'text-orange-600' },
+      { name: 'LangChain', icon: SiLangchain, color: 'text-green-600' },
+      { name: 'LlamaIndex', icon: SiOllama, color: 'text-purple-600' },
+      { name: 'Hugging Face', icon: SiHuggingface, color: 'text-yellow-500' },
+      { name: 'Weaviate', icon: FaDatabase, color: 'text-blue-500' },
+      { name: 'Neo4j', icon: SiNeo4J, color: 'text-blue-700' },
+      { name: 'Pinecone', icon: FaCube, color: 'text-green-500' },
     ],
-    // Row 2
+    // Row 2 - Databases & Programming Languages
     [
-      { name: 'Python', icon: FaPython, color: 'text-yellow-600' },
-      { name: 'Docker', icon: FaDocker, color: 'text-blue-500' },
-      { name: 'AWS', icon: FaAws, color: 'text-orange-500' },
-      { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-blue-800' },
       { name: 'MongoDB', icon: SiMongodb, color: 'text-green-500' },
+      { name: 'Supabase', icon: SiSupabase, color: 'text-green-600' },
+      { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-blue-800' },
+      { name: 'C++', icon: SiCplusplus, color: 'text-blue-600' },
+      { name: 'Python', icon: FaPython, color: 'text-yellow-600' },
+      { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-700' },
+      { name: 'FastAPI', icon: SiFastapi, color: 'text-teal-600' },
+      { name: 'Scikit-learn', icon: SiScikitlearn, color: 'text-orange-500' },
+    ],
+    // Row 3 - DevOps & Cloud
+    [
       { name: 'Git', icon: FaGitAlt, color: 'text-red-600' },
       { name: 'GitHub', icon: FaGithub, color: 'text-gray-800 dark:text-white' },
-      { name: 'TensorFlow', icon: SiTensorflow, color: 'text-orange-600' },
-      { name: 'PyTorch', icon: SiPytorch, color: 'text-red-500' },
+      { name: 'GitLab', icon: FaGitlab, color: 'text-orange-600' },
+      { name: 'AWS', icon: FaAws, color: 'text-orange-500' },
+      { name: 'GCP', icon: SiGooglecloud, color: 'text-blue-500' },
+      { name: 'Docker', icon: FaDocker, color: 'text-blue-500' },
+      { name: 'Kubernetes', icon: SiKubernetes, color: 'text-blue-600' },
+      { name: 'Kafka', icon: SiApachekafka, color: 'text-black dark:text-white' },
+    ],
+    // Row 4 - ML Ops & Data Tools
+    [
+      { name: 'MLflow', icon: SiMlflow, color: 'text-blue-700' },
+      { name: 'Airflow', icon: SiApacheairflow, color: 'text-red-500' },
+      { name: 'Spark', icon: SiApachespark, color: 'text-orange-600' },
+      { name: 'Postman', icon: SiPostman, color: 'text-orange-500' },
+      { name: 'Snowflake', icon: SiSnowflake, color: 'text-blue-500' },
+      { name: 'DVC', icon: SiDvc, color: 'text-purple-600' },
+      { name: 'Flask', icon: SiFlask, color: 'text-gray-800 dark:text-white' },
+      { name: 'Django', icon: SiDjango, color: 'text-green-700' },
     ],
   ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -122,8 +157,8 @@ const TechnologyStack: React.FC = () => {
                 <motion.div
                   key={tech.name}
                   variants={itemVariants}
-                  whileHover={{ 
-                    scale: 1.1, 
+                  whileHover={{
+                    scale: 1.1,
                     y: -8,
                     transition: { duration: 0.2 }
                   }}
@@ -143,15 +178,15 @@ const TechnologyStack: React.FC = () => {
         </div>
 
         {/* Optional: Add a subtle description */}
-        <motion.div
+        {/* <motion.div
           variants={rowVariants}
           className="mt-16 text-center"
         >
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
-            From frontend frameworks to machine learning libraries, I leverage modern technologies 
+            From frontend frameworks to machine learning libraries, I leverage modern technologies
             to build scalable, efficient, and user-friendly applications.
           </p>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </section>
   );

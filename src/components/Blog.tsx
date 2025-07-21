@@ -2,8 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const Blog: React.FC = () => {
+interface BlogProps {
+  showLimited?: boolean;
+}
+
+const Blog: React.FC<BlogProps> = ({ showLimited = false }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -60,6 +65,8 @@ const Blog: React.FC = () => {
     },
   ];
 
+  const displayedPosts = showLimited ? blogPosts.slice(0, 3) : blogPosts;
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -100,7 +107,7 @@ const Blog: React.FC = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, index) => (
+          {displayedPosts.map((post, index) => (
             <motion.article
               key={post.title}
               variants={cardVariants}
@@ -120,7 +127,7 @@ const Blog: React.FC = () => {
                   </span>
                 </div>
               </div>
-              
+
               <div className="p-6">
                 <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400 mb-3">
                   <div className="flex items-center space-x-1">
@@ -132,15 +139,15 @@ const Blog: React.FC = () => {
                     <span>{post.readTime}</span>
                   </div>
                 </div>
-                
+
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                   {post.title}
                 </h3>
-                
+
                 <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                   {post.summary}
                 </p>
-                
+
                 <motion.button
                   whileHover={{ x: 5 }}
                   className="flex items-center space-x-2 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium transition-colors"
@@ -153,18 +160,22 @@ const Blog: React.FC = () => {
           ))}
         </div>
 
-        <motion.div
-          variants={cardVariants}
-          className="text-center mt-12"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-full font-medium transition-colors shadow-lg hover:shadow-xl"
+        {showLimited && (
+          <motion.div
+            variants={cardVariants}
+            className="text-center mt-12"
           >
-            View All Articles
-          </motion.button>
-        </motion.div>
+            <Link to="/blog">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-full font-medium transition-colors shadow-lg hover:shadow-xl"
+              >
+                See All Articles
+              </motion.button>
+            </Link>
+          </motion.div>
+        )}
       </motion.div>
     </section>
   );

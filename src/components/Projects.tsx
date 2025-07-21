@@ -2,8 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Github, ExternalLink, Calendar } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const Projects: React.FC = () => {
+interface ProjectsProps {
+  showLimited?: boolean;
+}
+
+const Projects: React.FC<ProjectsProps> = ({ showLimited = false }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -58,6 +63,8 @@ const Projects: React.FC = () => {
     },
   ];
 
+  const displayedProjects = showLimited ? projects.slice(0, 3) : projects;
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -98,7 +105,7 @@ const Projects: React.FC = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <motion.div
               key={project.title}
               variants={cardVariants}
@@ -114,7 +121,7 @@ const Projects: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
               </div>
-              
+
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                   {project.title}
@@ -122,7 +129,7 @@ const Projects: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span
@@ -133,7 +140,7 @@ const Projects: React.FC = () => {
                     </span>
                   ))}
                 </div>
-                
+
                 <div className="flex space-x-4">
                   <motion.a
                     href={project.githubUrl}
@@ -164,6 +171,23 @@ const Projects: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+        {showLimited && (
+          <motion.div
+            variants={cardVariants}
+            className="text-center mt-12"
+          >
+            <Link to="/projects">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-colors shadow-lg hover:shadow-xl"
+              >
+                See All Projects
+              </motion.button>
+            </Link>
+          </motion.div>
+        )}
       </motion.div>
     </section>
   );
