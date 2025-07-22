@@ -18,87 +18,33 @@ const BlogPage: React.FC = () => {
 
     const blogPosts = [
         {
-            title: 'Building Scalable Machine Learning Pipelines',
-            summary: 'Learn how to design and implement robust ML pipelines that can handle production workloads efficiently. This comprehensive guide covers everything from data preprocessing to model deployment.',
-            date: '2024-01-15',
-            readTime: '8 min read',
-            category: 'Machine Learning',
-            image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600',
+            title: 'Implementing Video RAG : Multimodal Retrieval-Augmented Generation with code',
+            summary: 'Explore how to build a cutting-edge video search system that leverages both visual scenes and spoken content using Retrieval-Augmented Generation (RAG) with LLMs and code examples.',
+            date: '2025-07-21',
+            readTime: '5 min read',
+            category: 'Multimodal AI',
+            image: '/video_RAG.png',
+            link: 'https://medium.com/@riddhimanghatak/implementing-video-rag-multimodal-retrieval-augmented-generation-with-code-b501cbc77627', // Add your article URL here
         },
         {
-            title: 'React Performance Optimization Techniques',
-            summary: 'Discover advanced strategies to optimize React applications for better user experience and performance. From code splitting to memoization, learn the techniques that make a difference.',
-            date: '2024-01-10',
-            readTime: '12 min read',
-            category: 'Web Development',
-            image: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=600',
+            title: '"Attention Is All You Need": A Deep Dive into the Transformer Architecture',
+            summary: 'A detailed walkthrough of the revolutionary 2017 paper that introduced the Transformer model, explaining its self-attention mechanism, architecture, and why it changed the future of deep learning.',
+            date: '2025-07-20',
+            readTime: '7 min read',
+            category: 'Transformer Models',
+            image: '/transformer_architecture.png',
+            link: 'https://medium.com/@riddhimanghatak/attention-is-all-you-need-a-deep-dive-into-the-transformer-architecture-bb82a9a89b6b', // Add your article URL here
         },
         {
-            title: 'Deep Learning with TensorFlow 2.0',
-            summary: 'A comprehensive guide to building neural networks using the latest features in TensorFlow 2.0. Explore advanced architectures and training techniques for modern AI applications.',
-            date: '2024-01-05',
-            readTime: '15 min read',
-            category: 'Deep Learning',
-            image: 'https://images.pexels.com/photos/8386427/pexels-photo-8386427.jpeg?auto=compress&cs=tinysrgb&w=600',
-        },
-        {
-            title: 'Data Visualization Best Practices',
-            summary: 'Create compelling data stories with effective visualization techniques and modern tools. Learn how to choose the right charts and design principles for maximum impact.',
-            date: '2023-12-28',
-            readTime: '10 min read',
-            category: 'Data Science',
-            image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=600',
-        },
-        {
-            title: 'Microservices Architecture with Node.js',
-            summary: 'Design and implement scalable microservices using Node.js, Docker, and modern deployment strategies. Learn about service communication, data consistency, and monitoring.',
-            date: '2023-12-20',
-            readTime: '14 min read',
-            category: 'Backend Development',
-            image: 'https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=600',
-        },
-        {
-            title: 'AI Ethics and Responsible Development',
-            summary: 'Exploring the important considerations and frameworks for building ethical AI systems. Understand bias, fairness, and the social impact of artificial intelligence.',
-            date: '2023-12-15',
-            readTime: '11 min read',
-            category: 'AI Ethics',
-            image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=600',
-        },
-        {
-            title: 'Modern CSS Grid and Flexbox Layouts',
-            summary: 'Master modern CSS layout techniques with Grid and Flexbox. Learn how to create responsive, flexible layouts that work across all devices and browsers.',
-            date: '2023-12-10',
-            readTime: '9 min read',
-            category: 'Frontend Development',
-            image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
-        },
-        {
-            title: 'Database Design Patterns for Scale',
-            summary: 'Explore database design patterns that enable applications to scale effectively. From sharding to replication, learn the strategies used by high-traffic applications.',
-            date: '2023-12-05',
-            readTime: '13 min read',
-            category: 'Database Design',
-            image: 'https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=600',
-        },
-        {
-            title: 'Cloud Security Best Practices',
-            summary: 'Comprehensive guide to securing cloud applications and infrastructure. Learn about identity management, encryption, and monitoring in cloud environments.',
-            date: '2023-11-28',
-            readTime: '16 min read',
-            category: 'Cloud Security',
-            image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=600',
-        },
-        {
-            title: 'GraphQL vs REST: Making the Right Choice',
-            summary: 'Compare GraphQL and REST APIs to understand when to use each approach. Explore the benefits, drawbacks, and implementation considerations for both technologies.',
-            date: '2023-11-20',
-            readTime: '12 min read',
-            category: 'API Design',
-            image: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=600',
+            title: 'GGUF Quantization: Making Large Language Models Accessible to Everyone',
+            summary: 'Learn how GGUF quantization helps compress massive language models, enabling efficient deployment on low-resource devices while preserving performance and accuracy.',
+            date: '2025-07-19',
+            readTime: '7 min read',
+            category: 'LLM Optimization',
+            image: '/LLM_Quantization.png',
+            link: 'https://medium.com/@riddhimanghatak/gguf-quantization-making-large-language-models-accessible-to-everyone-9ad6401d8688', // Add your article URL here
         },
     ];
-
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -189,13 +135,18 @@ const BlogPage: React.FC = () => {
                                         {post.summary}
                                     </p>
 
-                                    <motion.button
-                                        whileHover={{ x: 5 }}
-                                        className="flex items-center space-x-2 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium transition-colors"
+                                    <a
+                                        href={post.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center space-x-2 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium transition-colors"
                                     >
-                                        <span>Read full article</span>
-                                        <ArrowRight size={16} />
-                                    </motion.button>
+                                        <motion.button whileHover={{ x: 5 }} className="flex items-center space-x-2">
+                                            <span>Read full article</span>
+                                            <ArrowRight size={16} />
+                                        </motion.button>
+                                    </a>
+
                                 </div>
                             </div>
                         </motion.article>
