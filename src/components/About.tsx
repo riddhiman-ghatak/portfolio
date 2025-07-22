@@ -15,28 +15,28 @@ const About: React.FC = () => {
   ];
 
   const recentPosts = [
-    { title: 'Building Scalable ML Pipelines', url: '#' },
-    { title: 'React Performance Optimization', url: '#' },
+    { title: 'GGUF Quantization: Making Large Language Models Accessible to Everyone', url: 'https://medium.com/@riddhimanghatak/gguf-quantization-making-large-language-models-accessible-to-everyone-9ad6401d8688' },
+    { title: '"Attention Is All You Need": A Deep Dive into the Transformer Architecture', url: 'https://medium.com/@riddhimanghatak/attention-is-all-you-need-a-deep-dive-into-the-transformer-architecture-bb82a9a89b6b' },
   ];
 
   const newsUpdates = [
     {
-      date: 'Aug 13, 2025',
-      content: 'Graduated from IIT Guwahati with M.Tech in AI'
+      date: 'Aug 4, 2025',
+      content: 'Joined CommBank Australia as Data Scientist'
     },
     {
-      date: 'Jul 20, 2025',
-      content: 'Joined TechCorp as Senior Data Scientist'
+      date: 'Jul 13, 2025',
+      content: 'Graduated from IIT Guwahati with B.Tech in CST'
     }
   ];
 
   const socialLinks = [
-    { icon: Github, url: 'https://github.com', label: 'GitHub' },
-    { icon: Twitter, url: 'https://twitter.com', label: 'Twitter' },
-    { icon: Linkedin, url: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Youtube, url: 'https://youtube.com', label: 'YouTube' },
+    { icon: Github, url: 'https://github.com/riddhiman-ghatak', label: 'GitHub' },
+    { icon: Twitter, url: 'https://x.com/riddhimanghatak', label: 'Twitter' },
+    { icon: Linkedin, url: 'https://www.linkedin.com/in/riddhiman-ghatak-210304260', label: 'LinkedIn' },
+    { icon: Youtube, url: 'https://www.youtube.com/@riddhimanghatak9261', label: 'YouTube' },
     { icon: Instagram, url: 'https://instagram.com', label: 'Instagram' },
-    { icon: ExternalLink, url: 'https://leetcode.com', label: 'LeetCode' },
+    { icon: ExternalLink, url: 'https://leetcode.com/u/riddhimanghatak/', label: 'LeetCode' },
   ];
 
   const containerVariants = {

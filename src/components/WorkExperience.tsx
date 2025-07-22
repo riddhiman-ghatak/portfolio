@@ -11,68 +11,52 @@ const WorkExperience: React.FC = () => {
 
   const experiences = [
     {
-      title: 'Senior Data Scientist',
-      company: 'TechCorp Inc.',
-      location: 'San Francisco, CA',
-      period: '2022 - Present',
+      title: 'Data Scientist',
+      company: 'Commonwealth Bank of Australia',
+      location: 'Bengaluru, India',
+      period: 'Aug 2025 - Present',
       type: 'Full-time',
-      description: 'Leading machine learning initiatives and building scalable data pipelines for enterprise clients. Developed predictive models that improved business outcomes by 35%.',
+      description: 'Working on Agentic AI applications, MLOps pipelines, and LLMOps solutions to enable scalable, intelligent banking systems.',
       achievements: [
-        'Built end-to-end ML pipelines serving 10M+ users daily',
-        'Led a team of 5 data scientists and engineers',
-        'Reduced model inference time by 60% through optimization',
-        'Published 3 research papers in top-tier conferences'
+        'Researching and deploying agentic AI solutions in production environments',
+        'Building MLOps workflows using Docker, Kubernetes, and MLflow',
+        'Fine-tuning LLMs and building secure RAG pipelines for internal tools',
+        'Collaborating across teams for AI-driven decision support systems'
       ],
-      technologies: ['Python', 'TensorFlow', 'AWS', 'Docker', 'Kubernetes'],
+      technologies: ['Python', 'LangGraph', 'Groq', 'Docker', 'MLflow', 'Kubernetes'],
       color: 'blue'
     },
     {
-      title: 'Full Stack Developer',
-      company: 'StartupXYZ',
+      title: 'Data Science Intern',
+      company: 'Menrva Technologies',
       location: 'Remote',
-      period: '2020 - 2022',
-      type: 'Full-time',
-      description: 'Developed and maintained web applications using modern technologies. Collaborated with cross-functional teams to deliver high-quality software solutions.',
+      period: 'Nov 2023 - Feb 2024',
+      type: 'Internship',
+      description: 'Built a resume scraping and shortlisting pipeline using RAG and re-ranking techniques.',
       achievements: [
-        'Built responsive web applications with React and Node.js',
-        'Implemented CI/CD pipelines reducing deployment time by 50%',
-        'Mentored junior developers and conducted code reviews',
-        'Improved application performance by 40% through optimization'
+        'Implemented a RAG framework using LangChain and ChromaDB with Mistral-7B-Instruct',
+        'Extracted structured information in JSON using semantic search + FlashRank',
+        'Achieved BERT Score of 0.56 and nDCG Score of 0.47 for re-ranking',
+        'Integrated Cross-Encoders, BM25, and Cosine Similarity for improved relevance'
       ],
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'MongoDB', 'AWS'],
+      technologies: ['Python', 'LangChain', 'ChromaDB', 'Mistral-7B', 'BM25', 'FlashRank'],
       color: 'green'
     },
     {
-      title: 'Data Analyst',
-      company: 'Analytics Pro',
-      location: 'New York, NY',
-      period: '2019 - 2020',
-      type: 'Full-time',
-      description: 'Performed statistical analysis and created data visualizations for business insights. Worked closely with stakeholders to understand requirements and deliver actionable insights.',
-      achievements: [
-        'Created interactive dashboards using Tableau and Power BI',
-        'Automated reporting processes saving 20 hours per week',
-        'Conducted A/B tests that increased conversion rates by 25%',
-        'Presented findings to C-level executives'
-      ],
-      technologies: ['Python', 'SQL', 'Tableau', 'Power BI', 'Excel'],
-      color: 'purple'
-    },
-    {
       title: 'Research Intern',
-      company: 'AI Research Lab',
-      location: 'Boston, MA',
-      period: '2018 - 2019',
+      company: 'University of New South Wales',
+      location: 'Remote',
+      period: 'Feb 2023 - Apr 2023',
       type: 'Internship',
-      description: 'Conducted research on deep learning algorithms for computer vision applications. Contributed to open-source projects and published research findings.',
+      description: 'Worked under Prof. Rohitash Chandra to develop forecasting models for GDP prediction of South Asian countries.',
       achievements: [
-        'Developed novel CNN architectures for image classification',
-        'Achieved state-of-the-art results on benchmark datasets',
-        'Contributed to 2 open-source machine learning libraries',
-        'Presented research at international conferences'
+        'Developed time series models using Exponential Smoothing and ARIMA',
+        'Built FBProphet and LSTM models with hyperparameter tuning',
+        'Achieved MAPE of 11.41 and Theil’s U Statistic of 0.67',
+        'Demonstrated improvement over naive models in economic forecasting'
       ],
-      technologies: ['Python', 'PyTorch', 'OpenCV', 'Jupyter', 'Git'],
-      color: 'orange'
+      technologies: ['Python', 'ARIMA', 'FBProphet', 'LSTM', 'Pandas', 'Matplotlib'],
+      color: 'purple'
     }
   ];
 

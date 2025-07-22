@@ -23,38 +23,33 @@ const CV: React.FC = () => {
 
   const experience = [
     {
-      title: 'Senior Data Scientist',
-      company: 'TechCorp Inc.',
-      period: '2022 - Present',
-      description: 'Leading ML initiatives and building scalable data pipelines for enterprise clients.',
+      title: 'Data Scientist',
+      company: 'Commonwealth Bank of Australia',
+      period: 'Aug 2025 - Present',
+      description: 'Working on Agentic AI applications, MLOps pipelines, and LLMOps solutions to enable scalable, intelligent banking systems.',
     },
     {
-      title: 'Full Stack Developer',
-      company: 'StartupXYZ',
-      period: '2020 - 2022',
-      description: 'Developed web applications using React, Node.js, and cloud technologies.',
+      title: 'Data Science Intern',
+      company: 'Menrva Technologies',
+      period: 'Nov 2023 - Feb 2024',
+      description: 'Built a resume scraping and shortlisting pipeline using RAG, LangChain and ChromaDB with Mistral-7B-Instruct. Applied Semantic Search and Re-ranking using BM25, Cross-Encoders and FlashRank.',
     },
     {
-      title: 'Data Analyst',
-      company: 'Analytics Pro',
-      period: '2019 - 2020',
-      description: 'Performed statistical analysis and created data visualizations for business insights.',
-    },
+      title: 'Research Intern',
+      company: 'University of New South Wales',
+      period: 'Feb 2023 - Apr 2023',
+      description: 'Built time series forecasting models for GDP prediction using ARIMA, FBProphet and LSTM. Achieved MAPE of 11.41 and Theil’s U statistic of 0.67 under Prof. Rohitash Chandra.',
+    }
   ];
+
 
   const education = [
     {
-      degree: 'M.Tech in Artificial Intelligence',
-      institution: 'IIT Guwahati',
-      period: '2017 - 2019',
-      description: 'Specialized in machine learning and deep learning algorithms.',
-    },
-    {
-      degree: 'B.Tech in Computer Science',
-      institution: 'NIT Warangal',
-      period: '2013 - 2017',
-      description: 'Foundation in computer science with focus on software engineering.',
-    },
+      degree: 'B.Tech in Chemical Science and Technology',
+      institution: 'Indian Institute of Technology, Guwahati',
+      period: '2021 - Present',
+      description: 'Current CGPA: 8.00. Focused coursework in machine learning, data structures, computational chemistry, and analytics.',
+    }
   ];
 
   const containerVariants = {
@@ -203,17 +198,18 @@ const CV: React.FC = () => {
               <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="text-purple-600 dark:text-purple-400" size={20} />
-                  <span className="text-gray-900 dark:text-white">alex.johnson@email.com</span>
+                  <span className="text-gray-900 dark:text-white">riddhimanghatak@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="text-purple-600 dark:text-purple-400" size={20} />
-                  <span className="text-gray-900 dark:text-white">+1 (555) 123-4567</span>
+                  <span className="text-gray-900 dark:text-white">+91-6290995330</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="text-purple-600 dark:text-purple-400" size={20} />
-                  <span className="text-gray-900 dark:text-white">San Francisco, CA</span>
+                  <span className="text-gray-900 dark:text-white">Bengaluru, India</span>
                 </div>
               </div>
+
             </div>
           </motion.div>
         </div>
