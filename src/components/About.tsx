@@ -97,7 +97,7 @@ const About: React.FC = () => {
                   variants={itemVariants}
                   className="text-xl text-blue-600 dark:text-blue-400 mb-4"
                 >
-                  Data Scientist
+                  Machine Learning Engineer & Data Scientist
                 </motion.p>
                 <motion.p
                   variants={itemVariants}
