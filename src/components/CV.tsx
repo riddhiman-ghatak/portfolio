@@ -48,7 +48,7 @@ const CV: React.FC = () => {
       degree: 'B.Tech in Chemical Science and Technology',
       institution: 'Indian Institute of Technology, Guwahati',
       period: '2021 - 2025',
-      description: 'Current CGPA: 8.00. Focused coursework in machine learning, data structures, computational chemistry, and analytics.',
+      description: 'Focused coursework in machine learning, data structures, computational chemistry, and analytics.',
     }
   ];
 
